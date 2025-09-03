@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PokedexByTeo</title>
+        <link rel="icon" type="PokedexEN/x-icon" href="/PokedexEN/premierBall.ico">
+        <link rel="stylesheet" href="PokedexByTeo.css">
+    </head>
+
+    <body>
+        
+        <h1 class="myH1">Pokédex</h1>
+
+        <label id="myLabel">GEN 1 ~ GEN 9</label><br><br>
+        <input type="text" id="pokemonInput" placeholder="PokeID or PKName"><br>
+        
+        <button id="myBTN">Search</button>
+
+        <div id="cardContainer">
+            <br>
+            <p id="pokemonInfo"></p><br>
+        
+        <div id="pokemonType"></div>
+            <img src="" id="pokemonSprite" alt="PokemonSprite" style="display: none;">
+        </div>
+
+        <div class="errorContainer" id="errorContainer">
+            <p id="errorText">Error</p>
+        </div>
+
+        <footer>
+            <p class="authorInfo">© 2025 Teo Sapphire - Pokedex Project | This project is for educational purposes only and is not affiliated with Nintendo, Game Freak, or The Pokémon Company. </p><br>
+        </footer>
+
+        <script src="PokedexByTeo.js"></script>
+
+    </body>
+</html>

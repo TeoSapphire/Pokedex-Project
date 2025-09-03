@@ -1,0 +1,282 @@
+/*Class animation for background*/
+
+@media (prefers-reduced-motion: reduce){
+  body{ animation: none !important; }
+}
+
+@keyframes flow{
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes holo{
+  0%, 100% {opacity: 0; }
+  50% {opacity: 0.6;}
+}
+
+/*Body style*/
+
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    justify-content: flex-start;
+    min-height:100vh;
+    box-sizing: border-box; /*Custom color background animation*/
+        --c1: hsl(0, 65%, 58%);
+        --c2: hsl(0, 65%, 27%);
+        --c3: hsl(0, 70%, 22%);
+    background: /*Animation gradient background*/
+        linear-gradient(135deg,
+        var(--c1),
+        var(--c2),
+        var(--c3) 
+    );
+    background-size: 400% 400%;
+    animation: flow 10s ease infinite;
+}
+
+/*H1 Style*/
+
+.myH1{
+    font-family: Orbitron, Arial, Helvetica, sans-serif;
+    font-size: 5.2rem;
+    font-weight: bold;
+    text-align: center;
+    color:hsl(0, 20%, 97%);
+    text-shadow: 0 0 5px hsl(51, 100%, 52%);
+    cursor: default;
+}
+
+#myLabel{
+    font-family: Orbitron, Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+    color: hsl(0, 20%, 97%);
+    text-shadow: 0 0 2px hsl(51, 100%, 50%);
+}
+
+/*Input field style*/
+
+#pokemonInput{
+    border: 2px solid hsl(51, 100%, 50%);
+    outline: none;
+    font-family: Orbitron, Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color:hsl(0, 20%, 97%);
+    background-color: hsl(0, 63%, 52%);
+}
+
+/*Placeholder style*/
+
+#pokemonInput::placeholder{
+    color: hsl(0, 20%, 97%);
+    text-align: center;
+    font-family: Orbitron, Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+}
+
+/*Footer style*/
+
+.authorInfo{
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: hsl(0, 20%, 97%);
+    cursor: default;
+}
+
+footer{
+    margin-top: auto;
+}
+
+/*Button style*/
+
+#myBTN{
+    font-family: Orbitron, Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    color: hsl(0, 20%, 97%);
+    background-color: hsl(0, 63%, 52%);
+    border-radius: 20px;
+    margin-bottom: 16px;
+    padding: 6px 12px;
+    border: 2px solid hsl(51, 100%, 50%);
+    cursor: pointer;
+}
+
+#myBTN:hover{
+    color: hsl(0, 67%, 29%);
+}
+
+#myBTN:active{
+    color: hsl(0, 50%, 52%);
+}
+
+/*Sprite style*/
+
+#pokemonSprite{
+    display: none;
+    width: 400px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 8px;
+    image-rendering: pixelated; /*Serve per non sfocare l'immagine se modificata la grandezza*/
+    filter: drop-shadow(2px 2px 2px hsla(0, 4%, 86%, 0.703));
+}
+
+/*CardContainer Pokémon style*/
+#cardContainer{
+    padding: 16px 20px;
+}
+
+#cardContainer{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    width: 470px;
+    height: auto;
+    margin: 0 auto;
+    border: 3px solid hsl(51, 100%, 50%);
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+    background-color: hsla(63, 81%, 50%, 0.249);
+}
+
+/*CardContainer animation holo style*/
+
+#cardContainer::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(120deg,
+        rgba(255,255,255,0.08) 10%,
+        rgba(255,255,255,0.00) 40%,
+        rgba(255,255,255,0.12) 60%,
+        rgba(255,255,255,0.00) 70%,
+        rgba(255,255,255,0.08) 100%
+        );
+    opacity: 0;
+    animation: holo 2s ease-in-out infinite;
+    z-index: 0;
+}
+
+#cardContainer > *{
+    position: relative;
+    z-index: 1;
+}
+
+/*PokémonInfo (ID/Name) style*/
+
+#pokemonInfo{
+    text-align: center;
+    font-family: Orbitron, Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    font-weight: bold;
+    color: hsl(0, 20%, 97%);
+    text-shadow: 0 0 2px hsl(51, 100%, 50%);
+    cursor: default;
+}
+
+/*Error message style*/
+
+#errorText{
+    text-align: center;
+    font-family: Orbitron, Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    margin:10px 0 8px;
+    font-weight: bold;
+    color: hsl(0, 20%, 97%);
+    text-shadow: 0 0 2px hsl(51, 100%, 50%);
+    cursor: default;
+}
+
+/*ErrorContainer box style*/
+
+.errorContainer{
+    display: none;
+    flex-direction: column;
+    height: 60px;
+    width: 500px;
+    margin: 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid hsl(51, 100%, 50%);
+    border-radius: 60px;
+}
+
+/*PokémonType box style*/
+
+#cardContainer #pokemonType { 
+    display: flex; 
+    margin: 0; 
+    padding: 0;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 10px 0 16px;
+}
+
+/*Individual type style*/
+
+#cardContainer #pokemonType .type{
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    padding: .35rem .2rem;
+    min-width: 96px;
+    height: 34px;
+    font: bold 1.1rem Orbitron, Arial, Helvetica, sans-serif;; 
+    color: hsl(0, 20%, 97%);
+    text-shadow: 0 0 2px black;
+    border-radius: 10px;
+    border: 3px solid hsl(51, 100%, 50%);
+    box-sizing: border-box;
+    cursor: default;
+}
+
+/*Divider between mutiple types*/
+
+#pokemonType .type + .type { 
+    border-left: none;
+}
+
+/*Pokémon Type color assegnation*/
+
+.type--normal {background-color: hsl(60, 2%, 65%)}
+.type--fire {background-color: hsl(0, 81%, 53%)}
+.type--water {background-color: hsl(214, 81%, 50%)}
+.type--electric {background-color: hsl(60, 87%, 48%)}
+.type--grass {background-color: hsl(120, 95%, 24%)}
+.type--ice {background-color: hsl(214, 70%, 72%)}
+.type--fighting {background-color: hsl(6, 84%, 29%)}
+.type--poison {background-color: hsl(263, 76%, 42%)}
+.type--ground {background-color: hsl(30, 77%, 68%)}
+.type--flying {background-color: hsl(263, 66%, 73%)}
+.type--psychic {background-color: hsl(292, 76%, 36%)}
+.type--bug {background-color: hsl(120, 34%, 49%)}
+.type--rock {background-color: hsl(39, 80%, 82%)}
+.type--ghost {background-color: hsl(263, 39%, 30%)}
+.type--dragon {background-color: hsl(241, 85%, 48%)}
+.type--dark {background-color: hsl(24, 7%, 14%)}
+.type--steel {background-color: hsl(240, 19%, 76%)}
+.type--fairy {background-color: hsl(330, 50%, 68%)}
