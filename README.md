@@ -1,4 +1,4 @@
-# Gen1 - Gen9 API DexByKabiKabi
+# Gen1 - Gen9 API DexByKabiKabi01
 
 <div align="center">
   <img width="400" height="225" alt="PokedexKabiKabi" src="https://github.com/user-attachments/assets/b1ca6ded-5187-4e2b-84d2-02e7133e8f5b" />
